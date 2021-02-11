@@ -1,0 +1,71 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.8
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+	'You have bought a Bitcoin And now it's on the rise!!! Create a
+	'program that:
+	'• Assign the value of the bitcoin at the time of purchase.
+	'• Assign the percentage of increase (Or decrease)
+	'• Logs the total value of your bitcoin.
+	'• Logs the increase Or decrease value.
+	
+	Private fltBit, fltValue, fltIncDec, fltIncDecPer, fltTotalValue As Float
+	
+	fltBit = 15
+	fltValue = 30123
+	fltIncDecPer = 12/100
+	fltTotalValue = fltBit * fltValue
+	Log("Total Value of Bitcoins: " & fltTotalValue)
+	fltIncDec = fltTotalValue * fltIncDecPer
+	Log("Increase or Decrease : " & fltIncDec )
+	
+	
+End Sub
+

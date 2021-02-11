@@ -1,0 +1,70 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.8
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+	'In a company the monthly salary of an employee Is calculated by the
+	'minimum wage 400$ per month, plus 20$ multiplied by the number
+	'of years employed, plus 30$ For Each child they have. Create a
+	'program that:
+	'• Assign the number of years employed in a variable
+	'• Assign the number of children the employee has in second variable.
+	'• Calculate And logs the total amount of salary the employee  makes
+	
+	Private fltMinWage = 400, fltTotalWage As Float
+	Private intKids, intYears As Int
+	
+	intKids = 3
+	intYears = 14
+	
+	fltTotalWage = fltMinWage + intKids * 30 + intYears * 20
+
+	Log("Total Wage: " & fltTotalWage)
+
+End Sub
