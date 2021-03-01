@@ -1,0 +1,82 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+	
+	Private intDistance = 100 As Int	' Notice the different declaration	
+	Private intTotalTravel As Int = 0 	' of two integers 
+	Private fltD As Float = 100.45
+	Private strΝ As String = "100"
+	Private s As String = "School"
+		
+	Log( fltD > intDistance)		'Shows True
+	Log( strΝ = intDistance)		'Shows True
+	Log( strΝ = intTotalTravel)		'Shows False
+	Log( s = intTotalTravel) 		'Shows False
+	Log( intTotalTravel <> strΝ ) 	'Shows True
+	
+	'Logical operators 
+	Private blnL1, blnL2 As Boolean
+	blnL1 = True
+	blnL2 = False
+	Private s2 As String = "School"
+	Private s1 As String = "School"
+	
+	Log (blnL1 And blnL2)	' Shows False
+	Log (blnL1 Or blnL2)	' Shows True
+	Log (Not(blnL1))		' Shows False	
+	Log (Not(blnL2))		' Shows True
+	
+	Log(s1 = s2)			' Shows True
+	 
+	 
+	
+End Sub
+

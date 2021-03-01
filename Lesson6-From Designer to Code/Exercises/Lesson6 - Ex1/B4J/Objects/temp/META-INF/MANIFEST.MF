@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+JavaFX-Version: 2.2
+JavaFX-Application-Class: b4j.example.main
+Created-By: JavaFX Packager
+Main-Class: anywheresoftware.b4a.keywords.Common
+

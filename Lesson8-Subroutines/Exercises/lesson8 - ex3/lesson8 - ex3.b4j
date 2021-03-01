@@ -1,0 +1,74 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+	Private txtSide As TextField
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+	Turtle.SetPenColor(xui.Color_Blue).SetPenSize(5)
+End Sub
+
+
+
+Private Sub btnDraw_Click
+	drawSquare
+End Sub
+
+Private Sub drawSquare
+	Turtle.MoveForward(txtSide.Text)
+	Turtle.TurnLeft(90)
+	
+	Turtle.MoveForward(txtSide.Text)
+	Turtle.TurnLeft(90)
+	
+	Turtle.MoveForward(txtSide.Text)
+	Turtle.TurnLeft(90)
+	
+	Turtle.MoveForward(txtSide.Text)
+	Turtle.TurnLeft(90)
+End Sub
