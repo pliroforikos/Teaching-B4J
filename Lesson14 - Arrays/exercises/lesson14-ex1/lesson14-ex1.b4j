@@ -1,0 +1,166 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+
+	'a.	Write a program that fills a table named A(50) with 
+	'random integers from 1 to 100.
+
+	Private arr(50) As Int
+	
+	For i = 0 To 49
+		arr(i) = Rnd(1,100)
+	Next
+
+'	'b.	Calculate and display the sum of table A(50) in even positions.
+'	Private sum As Int = 0
+'	
+'	For i = 0 To 49 
+'		sum = sum + arr(i)
+'	Next
+'	Log(sum)
+'	
+'	'c.	If the sum of the first 25 positions in the table is equal to 
+'	'the sum of the last 25 items, show the message "Equal totals".
+'	Private sum1, sum2 As Int 
+'	sum1 = 0 
+'	sum2 = 0
+'	For i = 0 To 24
+'		sum1 = sum1 + arr(i)
+'	Next
+'	For i = 25 To 49
+'		sum2 = sum2 + arr(i)
+'	Next
+'	If sum1 = sum2 Then
+'		Log("Equal Totals")
+'	End If 
+'	
+'	' d.	If A(1)=A(50),  A(2)=A(49),  A(3)=A(48)... A(25)=A(26), 
+'	' then displayed the message "Table symmetrical"
+'	Private found As Boolean = False 
+'	
+'	For i = 0 To 24 
+'		If arr(i) <> ar(50-i) Then
+'			found = True
+'		End If
+'	Next
+'	
+'	If found = False Then
+'		Log("Table symmetrical")
+'	End If
+'	
+'	' e. Find the maximum value and the locations of the 
+'	' table that it is located in.
+'	
+'	Private intMax As Int 
+'	intMax = arr(0)
+'	
+'	For i = 0 To 49 
+'		If intMax < arr(i) Then
+'			intMax = arr(i)
+'		End If
+'	Next
+'	
+'	For i = 0 To 49
+'		If intMax = arr(i) Then
+'			Log (i)
+'		End If
+'	Next
+	
+	sortArr(arr)
+	For i = 0 To 49
+		Log (arr(i))
+	Next
+	
+	' h. Using the two previous subprograms, sort table A, And Then search 
+	' for item 67 and display appropriate messages whether it was found or not.
+	Dim p As Int = binary(arr, 59)
+
+	If  p = 0 Then
+		Log("Key not found")
+	Else
+		Log("Found in posotion: " & p)
+	End If
+End Sub
+
+
+private Sub sortArr(A() As Int)
+	Private i, j, temp As Int
+	
+	For i = 1 To 49 
+		For j = 49 To i Step -1 
+			If A(j) < A(j-1) Then
+				temp = A(j)
+				A(j) = A(j-1)
+				A(j-1) = temp	
+			End If
+		Next
+	Next
+End Sub
+
+
+private Sub binary(A() As Int, key As Int ) As Int 
+	Private first, last, center, pos As Int
+	pos = 0
+	first = 0 
+	last = 49
+
+	Do While first <= last And pos = 0
+		center = (first+last)/2
+		If A(center) = key Then 
+			pos = center
+		else if A(center) > key Then
+			last = center - 1
+		Else
+			first = center + 1
+		End If
+	Loop
+	Return(pos) 
+End Sub
+

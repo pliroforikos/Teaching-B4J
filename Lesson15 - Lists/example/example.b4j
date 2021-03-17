@@ -1,0 +1,92 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=jxui
+Library4=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=4
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+
+	Private islands As List
+	islands.Initialize
+	
+	islands.AddAll(Array As String("Pireus", "Paros", "Thira", "Crete"))
+	
+	For i = 0 To islands .Size-1
+		Log(islands.Get(i))
+	Next
+	
+	'Insert item 
+	islands.InsertAt(2, "Naxos")
+	
+	For i = 0 To islands .Size-1
+		Log(islands.Get(i))
+	Next
+
+	'Create a list of arrays 
+	Private StudentsGrades As List
+	StudentsGrades.Initialize
+
+	For j = 0 To 4
+		Private Grades(5) As Int
+		For i = 0 To 4
+			Grades(i) = Rnd(1, 100)	'Create 5 random Grades For student
+		Next
+		StudentsGrades.Add(Grades)
+	Next
+	
+	'Show Students Grades
+	For j = 0 To StudentsGrades.Size - 1
+		Log("Student: " & j)
+		Private Grades(5) As Int = StudentsGrades.Get(j)
+		For I = 0 To 4
+			Log(Grades(i))
+		Next		
+	Next
+	
+End Sub
+

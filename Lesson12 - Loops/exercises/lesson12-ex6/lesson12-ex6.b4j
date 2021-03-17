@@ -1,0 +1,126 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+	Private x As Float
+	Private y As Float
+	Private k As Boolean
+
+	' 1
+	For i = 0 To 3
+		Turtle.MoveForward(100)
+		Turtle.TurnLeft(120)
+		Turtle.MoveForward(100)
+		Turtle.TurnLeft(120)
+		Turtle.MoveForward(100)
+		Turtle.TurnLeft(120)
+		Turtle.MoveForward(100)
+		Turtle.TurnRight(90)
+	Next
+	
+	'2
+	Turtle.ClearScreen
+	Turtle.TurnLeft(90)
+	Turtle.Arc(90, 100)
+	Turtle.Arc(90, 120)
+	Turtle.TurnLeft(180)
+	Turtle.Arc(90, 100)
+	Turtle.Arc(90, 120)
+	Turtle.TurnLeft(45)
+	
+	'3
+	Turtle.ClearScreen
+	Turtle.TurnRight(150)
+	Turtle.MoveForward(200)
+	Turtle.TurnRight(120)
+	Turtle.MoveForward(SinD(30)*200)
+	Turtle.TurnRight(120)
+	Turtle.MoveForward(200)
+	Turtle.TurnLeft(120)
+	Turtle.MoveForward(SinD(30)*200)
+	
+'	'4
+	Turtle.ClearScreen
+	For i = 80 To 140 Step 20
+		Turtle.Arc(360, i)
+	Next
+	
+'	'5
+	Turtle.ClearScreen
+	For i = 0 To 4
+		Turtle.MoveForward(100)
+		Turtle.TurnRight(144)
+	Next
+	
+	'6
+	Turtle.ClearScreen
+	'Turtle.SetPenColor(xui.Color_Blue).SetPenSize(5)
+	Turtle.SetPenColor(xui.Color_RGB(Rnd(0,255),Rnd(0,255),Rnd(0,255))).SetPenSize(5)
+	x = 200
+	y = 300
+	k = True
+	For j = 1 To 5
+		Turtle.SetX(x)
+		Turtle.SetY(y)
+		For i = 1 To 360
+			Turtle.MoveForward(1)
+			Turtle.TurnLeft(1)
+		Next
+		Turtle.SetPenColor(xui.Color_RGB(Rnd(0,255), Rnd(0,255), Rnd(0,255))).SetPenSize(5)
+		x = x + 50
+		If k Then
+			y = y + 50
+			k = False
+		Else
+			y = y - 50
+			k = True
+		End If
+	Next
+End Sub

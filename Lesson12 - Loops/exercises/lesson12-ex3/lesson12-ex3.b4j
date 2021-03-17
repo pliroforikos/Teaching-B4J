@@ -1,0 +1,76 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+
+'	a.	Enter the cost of the game (random number between 10-50 ,command Rnd(10, 50) )
+'	b.	Calculate the total cost of games purchased so far,
+'	c.	Check If the money has run out.
+'	d.	Finally show the total cost of the games And their number.
+
+	Private fltCost As Float = 0
+	Private fltWallet As Float = 200
+	Private intGamesCount As Int = 0
+		
+	Do While fltWallet >= 10 And intGamesCount < 10 
+		fltCost = Rnd(10,50)	
+		Log("Cost : " & fltCost) 
+		If fltWallet - fltCost >= 10 Then		
+			fltWallet = fltWallet - fltCost
+			intGamesCount = intGamesCount + 1
+		Else
+			Exit
+		End If
+	Loop
+	Log("Total Cost: " & (200 - fltWallet))
+	Log(intGamesCount & " Games")
+	
+End Sub
+

@@ -1,0 +1,78 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+'4.	A leap year (also known As an intercalary year Or bissextile year) 
+'Is a calendar year that contains an additional day added To keep the
+'calendar year synchronized with the astronomical year Or seasonal year.
+'A  year Is a leap year  when:
+'If (year Is Not divisible by 4) Then (it Is a common year)
+'else if (year Is Not divisible by 100) Then (it Is a leap year)
+'else if (year Is Not divisible by 400) Then (it Is a common year)
+'Else (it Is a leap year)
+'Make a program that shows the leap years between 1900 And 2100
+
+	Private msg As String 
+	
+	For year = 1900 To 2100 
+		
+		If year Mod 400 = 0 Then
+			msg = "a Leap Year"
+		else if year Mod 100 <> 0 And year Mod 4 = 0 Then 
+			msg = "a Leap Year"
+		Else
+			msg = "Not a Leap Year"
+		End If
+		
+		Log("year: " & year & " is " & msg) 	
+	Next
+
+End Sub
+

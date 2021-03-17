@@ -1,0 +1,165 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+'	Private Grades(14) As Int
+'	
+'	For i = 0 To 13
+'		Grades(i) = Rnd(1,100)
+'		Log(i & ":  " & Grades(i))
+'	Next
+
+'	'Show array items backwards 
+'	For i = 13 To 0 Step -1
+'		Log(i & ":  " & Grades(i))
+'	Next
+
+	
+'	'Create a table and give values 2nd 
+'	Private Grades() As Int
+'	Grades = Array As Int(19,43,12,65,23,87,45,65,87,23,56)
+'	For i = 0 To Grades.Length - 1
+'		Log(i & ":  " & Grades(i))
+'	Next
+
+	'Sum and Average 
+'	Private intSum As Int = 0
+'	Private fltAverage As Float
+'	For i = 0 To 13
+'		intSum = intSum + Grades(i)
+'	Next
+'	fltAverage = intSum / 14
+'	Log(intSum & fltAverage)
+
+'	'Max and Min
+'	Private intMax, intMin As Int
+'	intMax = Grades(0)
+'	intMin = Grades(0)
+'	For i = 0 To 13 
+'		If intMax < Grades(i) Then
+'			intMax = Grades(i)
+'		End If
+'		If intMin > Grades(i) Then
+'			intMin = Grades(i)
+'		End If
+'	Next
+'	Log("Max = " & intMax)
+'	Log("Min = " & intMin)
+'	
+
+	'Linear search 
+	Private Grades(1000) As Int
+	Private key As Int
+	For i = 0 To 999
+		Grades(i) = Rnd(1, 100)
+	Next
+
+	key = 75 'Searching Value
+
+	'Find all positions with key value
+	For i = 0 To 999 
+		If Grades(i) = key Then
+			Log("found in : " & i & "position")
+		End If
+	Next
+
+	'Find first appearance 
+	Private found As Boolean = False
+	i = 0
+	Do While Not (found) And i <= 999  
+		If Grades(i) = key Then
+			Log("found in : " & i & "position")
+			found = True
+		End If
+		i = i +  1
+	Loop
+
+
+'	'Bubble Sort
+'	Private Grades() As Int
+'	Private temp As Int
+'	Grades = Array As Int(65,12,19,43,23)
+'	For i = 1 To 4
+'		For k = 4 To i Step -1
+'		If Grades(k) < Grades(k-1) Then
+'			temp = Grades(k)
+'			Grades(k) = Grades(k-1)
+'			Grades(k-1) = temp
+'		End If
+'		Next
+'	Next
+'	For i = 0 To 4
+'		Log(i & ":  " & Grades(i))
+'	Next
+
+
+	'Selection Sort
+'	Private Grades() As Int
+'	Grades = Array As Int(65,12,19,43,23)
+'	Private intMin, intMinPos As Int
+'	
+'	For k = 0 To 4
+'		intMin = Grades(k)
+'		intMinPos = k
+'		For i = k To  4 
+'			If intMin > Grades(i) Then 
+'				intMin = Grades(i)
+'				intMinPos = i				
+'			End If
+'		Next
+'		Grades(intMinPos) = Grades(k)
+'		Grades(k) = intMin
+'	Next
+'	For i = 0 To 4
+'		Log(i & ":  " & Grades(i))
+'	Next
+
+End Sub
+

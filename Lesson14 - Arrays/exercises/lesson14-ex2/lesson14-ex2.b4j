@@ -1,0 +1,93 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=3
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+
+'	a.	The average temperature per day For one year Is stored in 
+'       a table Temperature(365). If you consider these temperatures 
+'		To be integer values between 1 And 40 oC, find And display the 
+'		frequency of each temperature.
+
+	Private Temperature(365) As Int 
+	Private Frequency(40) As Int 
+	
+	For i = 0 To 364 
+		Temperature(i) = Rnd(0, 40)
+	Next
+	
+	For i = 0 To 39 
+		Frequency(i) = 0
+	Next
+	
+	For i = 0 To 364
+		Frequency(Temperature(i)) = Frequency(Temperature(i)) + 1
+	Next
+	
+	For i = 0 To 39 
+		Log(i & ": " & Frequency(i) & " times")
+	Next
+	
+'	b.	In the previous table Temperature find the second highest tem-perature of the year.
+	Private Max1, Max2 As Int 
+	
+	Max1 = Temperature(0)
+	Max2 = Temperature(0)
+	
+	For i = 0 To 364 
+		If Max1 < Temperature(i) Then
+			Max2 = Max1
+			Max1 = Temperature(i)
+		Else if Max2 < Temperature(i) And Max1 > Temperature(i) Then 
+			Max2 = Temperature(i)
+		End If
+	Next
+	Log	(Max1 & "  " & Max2) 
+End Sub
+
