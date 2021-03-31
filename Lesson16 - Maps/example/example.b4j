@@ -1,0 +1,90 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.example
+File1=Main.bjl
+File2=turtle.png
+FileGroup1=Default Group
+FileGroup2=Default Group
+Group=Default Group
+Library1=jcore
+Library2=jfx
+Library3=jxui
+Library4=b4xturtle
+NumberOfFiles=2
+NumberOfLibraries=4
+NumberOfModules=0
+Version=8.9
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+
+#Region Form Preperation
+'Template version 1.00
+Sub Process_Globals
+	Private fx As JFX
+	Private MainForm As Form
+	Private xui As XUI 'ignore
+	Private Turtle As B4XTurtle
+	Private MenuBar1 As MenuBar
+End Sub
+
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	MainForm.RootPane.LoadLayout("Main")
+	MainForm.Show
+End Sub
+
+Sub MenuBar1_Action
+	Dim Mi As MenuItem = Sender
+	Select Mi.Tag
+		Case "Restart"
+			Turtle.Stop.ClearScreen.Home
+			Turtle_Start
+		Case "Exit"
+			MainForm.Close
+	End Select
+End Sub
+#End Region
+
+'B4XTurtle examples: https://www.b4x.com/android/forum/threads/examples-for-teachers-and-parents.116979
+Sub Turtle_Start
+
+	Private EnglishGreek As Map
+	EnglishGreek.Initialize
+
+	Private EnglishItalian As Map
+	EnglishItalian.Initialize
+
+	EnglishGreek.Put("Memory", "Μνήμη")
+	EnglishGreek.Put("Screen", "Οθόνη")
+	EnglishGreek.Put("Printer", "Μνήμη")
+	EnglishGreek.Put("Programming  Language", "Γλώσσα Προγραμματισμού")
+
+	EnglishItalian.Put("Memory", "Memoria")
+	EnglishItalian.Put("Screen", "Schermo")
+	EnglishItalian.Put("Printer", "Stampante")
+	EnglishItalian.Put("Programming  Language", "Linguaggio di Pro-grammazione")
+
+	Private GRWord, ITWord  As String 
+	GRWord = EnglishGreek.Get("Screen2")
+	ITWord = EnglishItalian.Get("Screen")
+
+	Log(GRWord)
+	Log(ITWord)
+	Private key As String 
+	
+	key = EnglishItalian.GetKeyAt(2)
+	Log(key)
+	
+	Private Value As String 
+	Value = EnglishItalian.GetValueAt(2)
+	Log(Value) 	
+
+	For i = 0 To EnglishGreek.Size - 1
+		Log(EnglishGreek.GetValueAt(i)) 
+	Next
+	
+End Sub
+

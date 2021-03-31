@@ -1,0 +1,33 @@
+1;The storm of London;F. Dickberry;1810;Impress Publishing;29
+2;Medicine in the Middle Ages;Edmond Dupouy;1856;Great Library;17
+3;Tolla;Edmond About;1942;Manhatan Library ;12
+4;Strange Exodus;Robert Abernathy;1923;New Public publ.;36
+5;The Counterplot;Hope Mirrlees;1924;Cider publ.;30
+6;Patch;William Shedenhelm;1810;Orange punl.;13
+7;The World Turned Upside Down;E. C. Clayton;1983;Impress Publishing;2
+8;The Duke Decides;Headon Hill;1858;Great Library;14
+9;The Empty Sack;Basil King;1957;Orange punl.;36
+10;A Primer of Assyriology;Archibald Henry Sayce;1937;New Public publ.;37
+11;Masters of French Music;Arthur Hervey;1933;Cider publ.;48
+12;Louis XIV and La Grande Mademoiselle;Arvede Barine;1858;Manhatan Library ;11
+14;William Blake;Irene Langridge;1975;Cider publ.;22
+15;On the Field of Glory;Henryk Sienkiewicz;1984;Orange punl.;44
+16;A Maid at King Alfred's Court;Lucy Foster;1952;Impress Publishing;59
+17;Anekdoten;J. van Lennep;1807;Impress Publishing;26
+18;Voyages et Avantures de Jaques;Simon Tyssot de Parot;1817;Impress Publishing;29
+19;The Boy's Book of Heroes;Helena Peake;1945;Great Library;52
+20;The Bradys After a Chinese Princess;Francis Worcester Doughty;1845;Impress Publishing;17
+21;The Standard Galleries - Holland;Esther Singleton;1955;Great Library;59
+22;Egmont;J. W. von Goethe;1907;New Public publ.;8
+23;John Woolman's Journal;John Woolman;1924;Cider publ.;31
+24;Violins and Violin Makers;Joseph Pearce;1928;Orange punl.;21
+25;The Deluge;Henryk Sienkiewicz;1816;Gutenberg publ.;32
+26;Blue Grass Seminary Vacation Adventures;Carolyn Judson Burnett;1935;New Public publ.;47
+27;Les Prerseurs;Romain Rolland;1914;Cider publ.;6
+28;Roman d'Eustache le moine;Francisque Michel;1993;Orange punl.;17
+29;The Whale and the Grasshopper;Seumas O'Brien;1838;Gutenberg publ.;59
+30;The Life of Abraham Lincoln;Henry Ketcham;1866;New Public publ.;54
+31;Christopher Columbus;Mildred Stapley;1954;Cider publ.;43
+32;The Adventures of Ferdinand Fathom;Tobias Smollett;1982;Orange punl.;32
+33;Tales of the Jazz Age;F. Scott Fitzgerald;1944;Gutenberg publ.;5
+40;Trojan War;Homer;1990;Stone Wall;1
