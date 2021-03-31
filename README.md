@@ -12,6 +12,17 @@ This work is licensed under a
 
 A series of Lessons to Teach B4J to middle and high Schools 
 
+| Translations|                              | 
+|-------------|------------------------------|
+| Englsih     | in this github	             |
+|      		  |                              |
+| Greek       | in this github               |
+|             | 						 	 |
+| Spanish     |https://github.com/Lamashino/Teaching-B4J-Spanish  |
+|             |Many Thanks to user Lamashino |
+|             |                              |
+
+
 | Lesson      |                              | Details                                                                                               | Hours |
 |-------------|------------------------------|-------------------------------------------------------------------------------------------------------|-------|
 | 1           | The B4X language             | ·  Why B4X                                                                                            | 1     |
