@@ -55,7 +55,7 @@ Private Sub B4XPage_Created (Root1 As B4XView)
 	
 	'kvsFile.Put(Student1.ID, Student1)
 	kvsFile.PutMapAsync(mapStudents) 
-	kvsFile.
+'	kvsFile.
 	Private Student3 As Student
 	If kvsFile.ContainsKey("FS23534X21") Then 
 		Student3 = kvsFile.Get("FS23534X21") 

@@ -4,6 +4,6 @@ ModuleBreakpoints0=
 ModuleBreakpoints1=
 ModuleClosedNodes0=1,4
 ModuleClosedNodes1=1
-NavigationStack=Main,MainForm_IconifiedChanged,37,0,Main,AppStart,14,6,B4XMainPage,Initialize,17,0,B4XMainPage,Class_Globals,15,6,B4XMainPage,LogStudent,60,6,B4XMainPage,B4XPage_Created,51,6
+NavigationStack=Main,MainForm_IconifiedChanged,37,0,Main,AppStart,14,6,B4XMainPage,LogStudent,60,6,B4XMainPage,Initialize,18,0,B4XMainPage,Class_Globals,16,6,B4XMainPage,B4XPage_Created,48,6
 SelectedBuild=0
 VisibleModules=1
