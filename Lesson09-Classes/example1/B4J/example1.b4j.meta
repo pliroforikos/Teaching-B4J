@@ -7,6 +7,6 @@ ModuleBreakpoints2=
 ModuleClosedNodes0=1,4
 ModuleClosedNodes1=1
 ModuleClosedNodes2=
-NavigationStack=Main,MainForm_IconifiedChanged,37,0,Main,AppStart,14,6,B4XMainPage,Class_Globals,11,6,clsBook,logBook,27,0,clsBook,Class_Globals,4,6,clsBook,changeBook,32,0,clsBook,Initialize,11,6,clsBook,insertBook,14,6,B4XMainPage,Initialize,17,0,B4XMainPage,B4XPage_Created,25,6
+NavigationStack=B4XMainPage,Class_Globals,11,6,clsBook,Class_Globals,4,6,clsBook,setWriter,42,2,clsBook,getWriter,39,0,clsBook,setPublisher,64,0,clsBook,changeBook,36,0,clsBook,logBook,27,0,clsBook,Initialize,12,6,clsBook,insertBook,13,6,B4XMainPage,B4XPage_Created,36,6
 SelectedBuild=0
 VisibleModules=1,2

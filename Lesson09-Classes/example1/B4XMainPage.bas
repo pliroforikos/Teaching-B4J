@@ -35,7 +35,11 @@ Private Sub B4XPage_Created (Root1 As B4XView)
 	
 	book1.logBook
 	book2.logBook
-
+	
+	book1.Writer = "Wil. Gibson" 
+	
+	Log(book1.Writer) 
+	
 	
 End Sub
 
