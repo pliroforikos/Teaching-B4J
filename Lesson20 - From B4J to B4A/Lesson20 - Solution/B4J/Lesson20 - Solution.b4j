@@ -10,7 +10,7 @@ Module1=|relative|..\B4XMainPage
 NumberOfFiles=1
 NumberOfLibraries=3
 NumberOfModules=1
-Version=8.9
+Version=8.8
 @EndOfDesignText@
 #Region Project Attributes 
 	#MainFormWidth: 300
